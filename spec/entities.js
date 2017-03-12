@@ -57,8 +57,8 @@ describe('Entities library', function () {
 
   });
 
-  xdescribe('Character type', function () {
-    var features = {
+  describe('Character type', function () {
+    var character, features = {
       initiative: 15,
       defense: 55,
       weapon: null,
@@ -67,8 +67,6 @@ describe('Entities library', function () {
       mp: 100,
       maxMp: 100
     };
-
-    var character;
 
     beforeEach(function () {
       character = new Character('Test', features);
@@ -84,7 +82,7 @@ describe('Entities library', function () {
       expect(character.mp).toBe(0);
       expect(character.hp).toBe(0);
       expect(character.maxMp).toBe(0);
-      expect(character.maxHp).toBe(15);
+      expect(character.maxHp).toBe(0);
     });
 
     it('allows to create characters with specific features.', function () {
@@ -121,8 +119,7 @@ describe('Entities library', function () {
 
     describe('Effect application', function () {
 
-      var variations;
-      var effect;
+      var variations, effect;
 
       beforeEach(function () {
         variations = {
@@ -160,7 +157,7 @@ describe('Entities library', function () {
         });
       });
 
-      it('does not applie an effect if the effect comes from a foe but ' +
+      it('does not apply an effect if the effect comes from a foe but ' +
       'defense roll passed.',
       function () {
         var isAlly = false;

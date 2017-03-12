@@ -26,8 +26,11 @@ Scroll.prototype.canBeUsed = function (mp) {
 };
 
 function Effect(variations) {
-  this.hp = variations.hp;
-  this.mp = variations.mp;
+  var self = this;
+
+  Object.keys(variations).forEach(function (feature) {
+    self[feature] = variations[feature];
+  });
 }
 
 module.exports = {
