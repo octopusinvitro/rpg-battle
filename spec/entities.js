@@ -44,9 +44,9 @@ describe('Entities library', function () {
     expect(Effect).toEqual(jasmine.any(Function));
   });
 
-  xdescribe('Effect type', function () {
+  describe('Effect type', function () {
 
-    it('allows specify arbitrary feature alterations.', function () {
+    it('allows to specify arbitrary feature alterations.', function () {
       var effect = new Effect({
         hp: 5,
         mp: -5

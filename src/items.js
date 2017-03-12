@@ -26,8 +26,8 @@ Scroll.prototype.canBeUsed = function (mp) {
 };
 
 function Effect(variations) {
-  // Copia las propiedades que se encuentran en variations como propiedades de
-  // este objeto.
+  this.hp = variations.hp;
+  this.mp = variations.mp;
 }
 
 module.exports = {
