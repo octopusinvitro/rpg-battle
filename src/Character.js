@@ -4,9 +4,9 @@ var dice = require('./dice');
 function Character(name, features) {
   features = features || {};
 
-  this.name = name;
+  this.name = name || null;
   this.party = null;
-  this.weapon = null;
+  this.weapon = features.weapon || null;
 
   this.initiative = features.initiative || 0;
   this._defense = features.defense || 0;
