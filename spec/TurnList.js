@@ -1,9 +1,10 @@
 'use strict';
 
-xdescribe('The TurnList type', function () {
-  var TurnList = require('../src/TurnList');
-  var turnList;
-  var characters;
+describe('The TurnList type', function () {
+  var
+    TurnList = require('../src/TurnList'),
+    turnList,
+    characters;
 
   function FakeCharacter(party, inititative, isDead) {
     this.party = party;
@@ -31,7 +32,7 @@ xdescribe('The TurnList type', function () {
     expect(turnList.list).toEqual(['c', 'b', 'a']);
   });
 
-  it('accepts a set of characters and sort them by inititative.', function () {
+  it('can play the next turn.', function () {
     var turn = turnList.next();
 
     expect(turn.number).toBe(1);
