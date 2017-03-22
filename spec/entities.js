@@ -2,18 +2,19 @@ var mockery = require('mockery');
 
 describe('Entities library', function () {
 
-  var entities;
+  var
+   entities,
 
-  var Character;
-  var Item;
-  var Weapon;
-  var Scroll;
-  var Effect;
+   Character,
+   Item,
+   Weapon,
+   Scroll,
+   Effect,
 
-  var fakeD100 = 50;
-  var fakeDice = {
-    d100: function () { return fakeD100; }
-  };
+   fakeD100 = 50,
+   fakeDice = {
+     d100: function () { return fakeD100; }
+   };
 
   beforeAll(function () {
     mockery.registerMock('./dice', fakeDice);
@@ -172,13 +173,14 @@ describe('Entities library', function () {
     });
 
     it('prevents effects from changing name or weapon.', function () {
-      var variations = {
-        name: 'Avoided',
-        weapon: null
-      };
-      var effect = new Effect(variations);
-      var originalName = character.name;
-      var originalWeapon = character.weapon;
+      var
+        variations = {
+          name: 'Avoided',
+          weapon: null
+        },
+        effect = new Effect(variations),
+        originalName = character.name,
+        originalWeapon = character.weapon;
       character.applyEffect(effect);
       expect(character.name).toBe(originalName);
       expect(character.weapon).toBe(originalWeapon);

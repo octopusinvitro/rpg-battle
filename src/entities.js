@@ -1,8 +1,8 @@
 'use strict';
-var items = require('./items');
-var Character = require('./Character');
-
-var Effect = items.Effect;
+var
+  items = require('./items'),
+  Character = require('./Character'),
+  Effect = items.Effect;
 
 var lib = module.exports = {
   Item: items.Item,
