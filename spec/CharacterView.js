@@ -1,25 +1,26 @@
 var samples = require('./samplelib');
 
-xdescribe('CharactesView type', function () {
+describe('CharactersView type', function () {
   'use strict';
 
-  var CharactersView = require('../src/CharactersView');
+  var
+    CharactersView = require('../src/CharactersView'),
 
-  var charactersView;
+    charactersView,
 
-  var heroTank = samples.characters.heroTank;
-  var heroWizard = samples.characters.heroWizard;
+    heroTank = samples.characters.heroTank,
+    heroWizard = samples.characters.heroWizard,
 
-  var visibleFeatures = [
-    'name',
-    'party',
-    'initiative',
-    'defense',
-    'hp',
-    'mp',
-    'maxHp',
-    'maxMp'
-  ];
+    visibleFeatures = [
+      'name',
+      'party',
+      'initiative',
+      'defense',
+      'hp',
+      'mp',
+      'maxHp',
+      'maxMp'
+    ];
 
   beforeAll(function () {
     heroTank.party = 'teamA';
@@ -36,7 +37,7 @@ xdescribe('CharactesView type', function () {
 
   it('shows only the visible features and includes id.', function () {
     var heroTankView = charactersView.get('Tank');
-    var featuresCount = Object.keys(heroTankView).length ;
+    var featuresCount = Object.keys(heroTankView).length;
 
     expect(featuresCount).toBe(visibleFeatures.length);
     visibleFeatures.forEach(function (feature) {
