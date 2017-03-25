@@ -14,11 +14,15 @@ Options.prototype.list = function () {
 };
 
 Options.prototype.get = function (id) {
-  return this._group[id];
+  var option = this._group[id];
+  if (option === undefined) {
+    this.emit('choseError', 'option-does-not-exist', id);
+  }
+  return option;
 };
 
 Options.prototype.select = function (id) {
-  // Haz que se emita un evento cuando seleccionamos una opción.
+  this.emit('chose', id, this.get(id));
 };
 
 module.exports = Options;
